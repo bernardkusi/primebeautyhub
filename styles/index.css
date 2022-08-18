@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #3c3c3c;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.click {
+  display: inline-block;
+  padding: .9rem 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background: rgba(255, 99, 125, 0.98);
+  font-size: 1.15rem;
+  border-radius: .5rem;
+  border: none;
+  outline: none;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.click:hover {
+  color: rgba(255, 99, 125, 0.98);
+  background: #fff;
+  -webkit-box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.center, .page {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.page {
+  max-width: 1300px;
+  padding: 5rem 1rem 4rem;
+}
+
+.page .heading {
+  text-align: center;
+  padding: 1.5rem 0 3rem;
+  font-size: 1.8rem;
+  color: #954695;
+}
+
+.page .heading span {
+  font-size: 1.3rem;
+  color: rgba(255, 99, 125, 0.98);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 2rem .5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: rgba(255, 99, 125, 0.98);
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  top: 0;
+  -webkit-box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  height: 5rem;
+}
+
+nav a.logo {
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #fff;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0 1.7rem;
+}
+
+nav ul a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+nav ul a:hover {
+  color: #954695;
+}
+
+#home {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.327)), to(rgba(0, 0, 0, 0.379))), url("../bacd.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.327), rgba(0, 0, 0, 0.379)), url("../bacd.jpg");
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh - 5rem);
+  padding: 5rem 2rem 5rem;
+}
+
+#home .intro {
+  padding: 2rem 1rem;
+  max-width: 43rem;
+}
+
+#home .intro h1 {
+  font-size: 4.7rem;
+  color: #fff;
+  line-height: 100%;
+}
+
+#home .intro h1 span {
+  color: #843e84;
+  font-size: 5rem;
+}
+
+#home .intro p {
+  padding: 1rem 0;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+#about .test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#about .aboutflex {
+  padding-top: 1.5rem;
+  background: lightgrey;
+  width: 55%;
+  height: 450px;
+  position: relative;
+}
+
+#about .aboutflex .abouttext {
+  position: absolute;
+  width: 100%;
+  right: -80%;
+  top: 30%;
+  background: rgba(149, 70, 149, 0.95);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+#services .servicegrid {
+  padding-top: 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+#services .servicegrid .service {
+  background: #fff;
+  -webkit-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.21);
+          box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.21);
+  border-radius: .3rem;
+}
+
+#services .servicegrid .service .serviceimage {
+  width: 100%;
+  height: 8.5rem;
+  background: lightgrey;
+  border-radius: .3rem;
+  overflow: hidden;
+}
+
+#services .servicegrid .service .serviceimage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#services .servicegrid .service .servicedetails {
+  padding: .6rem;
+}
+
+#services .servicegrid .service .servicedetails .servicename {
+  color: #954695;
+  font-weight: 600;
+  padding: .4rem 0;
+}
+
+#services .servicegrid .service .servicedetails .servicedescription {
+  font-size: .95rem;
+}
+
+#products {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+#products .productgrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: .6rem;
+}
+
+#products .productgrid .product {
+  padding: .4rem;
+  background: #fff;
+  border: 1px solid lightgrey;
+  border-radius: .4rem;
+  -webkit-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.21);
+          box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.21);
+  margin-top: 2rem;
+}
+
+#products .productgrid .product .productimage {
+  width: 100%;
+  height: 11rem;
+  background: lightgrey;
+}
+
+#products .productgrid .product .productdetails {
+  padding: .3rem;
+  margin-top: .3rem;
+}
+
+#products .productgrid .product .productdetails .productname {
+  color: #954695;
+  font-size: 1.05rem;
+}
+
+#products .productgrid .product .productdetails .productdescription {
+  font-size: .9rem;
+  padding: .3rem 0;
+  color: grey;
+}
+
+#products .productgrid .product .productdetails .productprice {
+  font-size: 1rem;
+}
+
+#products .productgrid .product .productdetails .click {
+  -webkit-transform: scale(0.77);
+          transform: scale(0.77);
+  -webkit-transform-origin: 0;
+          transform-origin: 0;
+}
+
+#blogs .blogflex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  padding-top: 1.5rem;
+}
+
+#blogs .blogflex .blogtitle {
+  color: #954695;
+  font-size: 1.1rem;
+  padding: .3rem 0;
+}
+
+#blogs .blogflex .blogdetails {
+  color: grey;
+  padding: .6rem 0;
+}
+
+#blogs .blogflex .click {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transform-origin: 0;
+          transform-origin: 0;
+  float: right;
+}
+
+#blogs .blogflex .image {
+  height: 19rem;
+  background: lightgrey;
+}
+
+.contactflex {
+  padding: 1.5rem 0 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.contactflex div {
+  width: 100%;
+}
+
+.contactflex .map {
+  background: lightgray;
+  height: 28rem;
+}
+
+.contactflex .form form {
+  padding: 1rem 1rem 1rem;
+}
+
+.contactflex .form form .label {
+  text-align: center;
+  padding-bottom: .5rem;
+  color: #954695;
+  font-size: 1.45rem;
+}
+
+.contactflex .form form .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-bottom: .5rem;
+}
+
+.contactflex .form form .control label {
+  display: block;
+  font-size: .9rem;
+  padding: .2rem 0;
+}
+
+.contactflex .form form .control input, .contactflex .form form .control textarea {
+  width: 100%;
+  padding: .55rem;
+  outline: none;
+  border: 1px solid lightgrey;
+  resize: none;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.contactflex .form form .control input:focus, .contactflex .form form .control textarea:focus {
+  border-color: rgba(255, 99, 125, 0.98);
+}
+
+.contactflex .form form .control input:focus + label, .contactflex .form form .control textarea:focus + label {
+  color: rgba(255, 99, 125, 0.98);
+}
+
+footer {
+  padding: 5rem 2rem 7rem;
+  background: #3a3a3a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 2rem;
+}
+
+footer p {
+  color: lightgray;
+  max-width: 570px;
+}
+
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 2rem;
+}
+
+footer ul a {
+  color: lightgray;
+  padding: .13rem;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+footer ul a:hover {
+  color: rgba(255, 99, 125, 0.98);
+}
+/*# sourceMappingURL=index.css.map */

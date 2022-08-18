@@ -1,0 +1,52 @@
+.click{
+    display: inline-block;
+    padding: .9rem 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    background: $primary;
+    font-size: 1.15rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    // border: 1.5px solid $primary;
+    transition: all .4s;
+
+    &:hover{
+        color: $primary;
+        background: #fff;
+        box-shadow:  0 0 .4rem rgba(0, 0, 0, 0.2);
+    }
+}
+
+.center{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page{
+    @extend .center;
+    max-width: 1300px;
+    padding: 5rem 1rem 4rem;
+
+    .heading{
+        text-align: center;
+        padding: 1.5rem 0 3rem;
+        font-size: 1.8rem;
+        color: $secondary;
+
+        span{
+            font-size: 1.3rem;
+            color: $primary;
+        }
+    }
+
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

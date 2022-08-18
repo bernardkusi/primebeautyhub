@@ -1,0 +1,318 @@
+$primary: rgba(255, 99, 125, 0.98);
+$secondary: rgb(149, 70, 149);
+$text :rgb(60, 60, 60);
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: $text;
+    font-family: 'Tajawal', sans-serif;
+}
+
+@import './reusables';
+
+nav{
+    display: flex;
+    padding: 2rem 2rem .5rem;
+    justify-content: space-between;
+    background: $primary;
+    position: sticky;
+    width: 100%;
+    align-items: flex-end;
+    top: 0;
+    // border-bottom: 2px solid $secondary;
+    box-shadow:  0 0 .4rem rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    height: 5rem;
+
+    a.logo{
+        font-size: 2.1rem;
+        font-weight: 600;
+        color: #fff;
+        align-self: center;
+    }
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        gap: 0 1.7rem;
+
+        a{
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            transition: all .4s;
+
+            &:hover{
+                color: $secondary;
+            }
+        }
+    }
+}
+
+
+#home{
+    background: linear-gradient(rgba(0, 0, 0, 0.327),rgba(0, 0, 0, 0.379)) ,url('../bacd.jpg');
+    background-position: center;
+    background-size: cover;
+    height: calc(100vh - 5rem);
+    padding: 5rem 2rem 5rem;
+
+    .intro{
+        padding: 2rem 1rem;
+        max-width: 43rem;
+
+        h1{
+            font-size: 4.7rem;
+            color: #fff;
+            line-height: 100%;
+
+            span{
+                color: darken($secondary,5);
+                font-size: 5rem;
+            }
+        }
+
+        p{
+            padding: 1rem 0;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+    }
+}
+
+#about{
+    .test{
+        display: flex;
+    }
+    .aboutflex{
+            padding-top: 1.5rem;
+            background: lightgrey;
+            width: 55%;
+            height: 450px;
+            position: relative;
+
+            .abouttext{
+                position: absolute;
+                width: 100%;
+                right: -80%;
+                top: 30%;
+                background: rgba(149, 70, 149, 0.95);
+                color: #fff;
+                padding: 1.5rem;
+                border-radius: .5rem;
+            }
+    }
+}
+
+
+#services{
+    .servicegrid{
+        padding-top: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 2rem ;
+
+        .service{
+            background: #fff;
+            box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.21);
+            border-radius: .3rem;
+
+            .serviceimage{
+                width: 100%;
+                height: 8.5rem;
+                background: lightgrey;
+                border-radius: .3rem;
+                overflow: hidden;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+
+            .servicedetails{
+            padding: .6rem;
+
+                .servicename{
+                    color: $secondary;
+                    font-weight: 600;
+                    padding: .4rem 0;
+                }
+
+                .servicedescription{
+                    font-size: .95rem;
+                }
+            }
+        }
+    }
+}
+
+#products{
+    background: lighten($primary,33);
+
+    .productgrid{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: .6rem;
+
+        .product{
+            padding: .4rem;
+            background: #fff;
+            border: 1px solid lightgrey;
+            border-radius: .4rem;
+            box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.21);
+            margin-top: 2rem;
+
+            .productimage{
+                width: 100%;
+                height: 11rem;
+                background: lightgrey;
+            }
+
+            .productdetails{
+                // border: 1px solid lightgrey;
+                padding: .3rem;
+                margin-top: .3rem;
+                .productname{
+                    color: $secondary;
+                    font-size: 1.05rem;
+                }
+
+                .productdescription{
+                    font-size: .9rem;
+                    padding: .3rem 0;
+                    color: grey;
+                }
+
+                .productprice{
+                    font-size: 1rem;
+                }
+
+                .click{
+                    transform: scale(.77);
+                    transform-origin: 0;
+                }
+            }
+        }
+    }
+}
+
+#blogs{
+    .blogflex{
+        display: flex;
+        gap: 2rem;
+        padding-top: 1.5rem;
+
+        .blogtitle{
+            color: $secondary;
+            font-size: 1.1rem;
+            padding: .3rem 0;
+        }
+
+        .blogdetails{
+            color: grey;
+            padding: .6rem 0;
+        }
+
+        .click{
+            transform: scale(.9);
+            transform-origin: 0;
+            float: right;
+        }
+
+        .image{
+            height: 19rem;
+            background: lightgrey;
+        }
+    }
+}
+
+.contactflex{
+    padding: 1.5rem 0 4rem;
+    display: flex;
+    gap: 2rem;
+    
+    div{
+        width: 100%;
+    }
+
+    .map{
+        background: lightgray;
+        height: 28rem;
+    }
+
+    .form{
+        form{
+            padding: 1rem 1rem 1rem;
+
+            .label{
+                text-align: center;
+                padding-bottom: .5rem;
+                color: $secondary;
+                font-size: 1.45rem;
+            }
+
+            .control{
+                display: flex;
+                flex-direction: column-reverse;
+                margin-bottom: .5rem;
+                label{
+                    display: block;
+                    font-size: .9rem;
+                    padding: .2rem 0;
+                }
+    
+                input,textarea{
+                    width: 100%;
+                    padding: .55rem ;
+                    outline: none;
+                    border:  1px solid lightgrey;
+                    resize: none;
+                    transition: all .4s;
+
+                    &:focus{
+                        border-color: $primary;
+                    }
+
+                    &:focus+label{
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+footer{
+    padding: 5rem 2rem 7rem;
+    background: rgb(58, 58, 58);
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+    p{
+        color: lightgray;
+        max-width: 570px;
+    }
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+        a{
+            color: lightgray;
+            padding: .13rem;
+            transition: all .3s;
+            &:hover{
+                color: $primary;
+            }
+        }
+    }
+}
