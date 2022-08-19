@@ -42,6 +42,7 @@
 .page {
   max-width: 1300px;
   padding: 5rem 1rem 4rem;
+  overflow-x: hidden;
 }
 
 .page .heading {
@@ -61,6 +62,59 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.slider {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-bottom: 7rem;
+  left: 100%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.slider ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.slider ul a {
+  color: grey;
+  margin: 1rem 0;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.slider ul a:hover {
+  color: rgba(255, 99, 125, 0.98);
+}
+
+.slider.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
 }
 
 nav {
@@ -86,8 +140,8 @@ nav {
 }
 
 nav a.logo {
-  font-size: 2.1rem;
-  font-weight: 600;
+  font-size: 1.9rem;
+  font-weight: 700;
   color: #fff;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -115,6 +169,10 @@ nav ul a {
 
 nav ul a:hover {
   color: #954695;
+}
+
+.bars {
+  display: none;
 }
 
 #home {
@@ -155,22 +213,69 @@ nav ul a:hover {
 }
 
 #about .aboutflex {
-  padding-top: 1.5rem;
-  background: lightgrey;
   width: 55%;
   height: 450px;
   position: relative;
+  margin-top: 2rem;
+  left: 2rem;
+}
+
+#about .aboutflex .aboutimage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+#about .aboutflex .aboutimage > img {
+  position: absolute;
+}
+
+#about .aboutflex .aboutimage div {
+  width: 14rem;
+  height: 14rem;
+  position: absolute;
+  border: 6px solid #fff;
+}
+
+#about .aboutflex .aboutimage div.image1 {
+  left: -2rem;
+  top: -2rem;
+  width: 17rem;
+  height: 12rem;
+}
+
+#about .aboutflex .aboutimage div.image2 {
+  right: -2rem;
+  top: -2rem;
+  width: 12rem;
+  height: 17rem;
+}
+
+#about .aboutflex .aboutimage div.image3 {
+  left: -2rem;
+  bottom: -2rem;
+  width: 13rem;
+  height: 17rem;
+}
+
+#about .aboutflex .aboutimage div.image4 {
+  right: -2rem;
+  bottom: -2rem;
+  width: 17rem;
+  height: 12rem;
 }
 
 #about .aboutflex .abouttext {
   position: absolute;
   width: 100%;
-  right: -80%;
+  right: -75%;
   top: 30%;
   background: rgba(149, 70, 149, 0.95);
   color: #fff;
   padding: 1.5rem;
   border-radius: .5rem;
+  z-index: 2;
 }
 
 #services .servicegrid {
@@ -179,7 +284,7 @@ nav ul a:hover {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 0 2rem;
 }
 
 #services .servicegrid .service {
@@ -187,6 +292,7 @@ nav ul a:hover {
   -webkit-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.21);
           box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.21);
   border-radius: .3rem;
+  margin-top: .4rem;
 }
 
 #services .servicegrid .service .serviceimage {
@@ -223,17 +329,17 @@ nav ul a:hover {
 }
 
 #products .productgrid {
+  overflow-y: hidden;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  gap: .6rem;
+  gap: 0 .6rem;
 }
 
 #products .productgrid .product {
   padding: .4rem;
   background: #fff;
-  border: 1px solid lightgrey;
   border-radius: .4rem;
   -webkit-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.21);
           box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.21);
@@ -274,25 +380,30 @@ nav ul a:hover {
 }
 
 #blogs .blogflex {
+  overflow-y: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 2rem;
+  gap: 0 2rem;
   padding-top: 1.5rem;
 }
 
-#blogs .blogflex .blogtitle {
+#blogs .blogflex .blog {
+  margin-top: .7rem;
+}
+
+#blogs .blogflex .blog .blogtitle {
   color: #954695;
   font-size: 1.1rem;
   padding: .3rem 0;
 }
 
-#blogs .blogflex .blogdetails {
+#blogs .blogflex .blog .blogdetails {
   color: grey;
   padding: .6rem 0;
 }
 
-#blogs .blogflex .click {
+#blogs .blogflex .blog .click {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   -webkit-transform-origin: 0;
@@ -300,7 +411,7 @@ nav ul a:hover {
   float: right;
 }
 
-#blogs .blogflex .image {
+#blogs .blogflex .blog .image {
   height: 19rem;
   background: lightgrey;
 }
@@ -310,7 +421,7 @@ nav ul a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 2rem;
+  gap: 0 4rem;
 }
 
 .contactflex div {
@@ -368,6 +479,13 @@ nav ul a:hover {
   color: rgba(255, 99, 125, 0.98);
 }
 
+.contactflex .form form .click {
+  -webkit-transform: scale(0.9) translateX(-50%);
+          transform: scale(0.9) translateX(-50%);
+  -webkit-transform-origin: 0;
+          transform-origin: 0;
+}
+
 footer {
   padding: 5rem 2rem 7rem;
   background: #3a3a3a;
@@ -377,7 +495,8 @@ footer {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  gap: 2rem;
+  gap: 0 2rem;
+  position: relative;
 }
 
 footer p {
@@ -405,5 +524,331 @@ footer ul a {
 
 footer ul a:hover {
   color: rgba(255, 99, 125, 0.98);
+}
+
+footer .copy {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: .9rem;
+  position: absolute;
+  bottom: 1.7rem;
+  color: #fff;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+@media (max-width: 1080px) {
+  .productgrid {
+    -ms-grid-columns: (1fr)[3] !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+    gap: .6rem;
+  }
+  .productgrid .product {
+    max-width: 23rem;
+    justify-items: center;
+  }
+  .aboutflex {
+    width: 55%;
+    height: 450px;
+    position: relative;
+    margin-top: 2rem;
+    left: 2rem;
+  }
+  .aboutflex .aboutimage div.image1 {
+    left: -2rem;
+    top: -2rem;
+    width: 13rem !important;
+    height: 10rem !important;
+  }
+  .aboutflex .aboutimage div.image2 {
+    right: -2rem;
+    top: -2rem;
+    width: 10rem !important;
+    height: 13rem !important;
+  }
+  .aboutflex .aboutimage div.image3 {
+    left: -2rem;
+    bottom: -2rem;
+    width: 10rem !important;
+    height: 13rem !important;
+  }
+  .aboutflex .aboutimage div.image4 {
+    right: -2rem;
+    bottom: -2rem;
+    width: 13rem !important;
+    height: 10rem !important;
+  }
+  .aboutflex .abouttext {
+    position: absolute;
+    width: 100%;
+    right: -75%;
+    top: 30%;
+    background: rgba(149, 70, 149, 0.95);
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    z-index: 2;
+  }
+  .servicegrid {
+    gap: .5rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    height: 4.5rem;
+  }
+  nav ul {
+    display: none;
+  }
+  .bars {
+    z-index: 12;
+    display: block;
+    position: fixed;
+    right: 1.7rem;
+    top: 2rem;
+    width: 25px;
+    height: 23px;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  .bars .bar {
+    width: 100%;
+    position: relative;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+  .bars .bar::before {
+    content: "";
+    width: 85%;
+    position: absolute;
+    height: 3px;
+    background: #fff;
+    top: 8px;
+    border-radius: 2px;
+  }
+  .bars .bar::after {
+    content: "";
+    width: 60%;
+    position: absolute;
+    height: 3px;
+    background: #fff;
+    top: 16px;
+    border-radius: 2px;
+  }
+  .bars.activ {
+    -webkit-transform: translateY(0.5rem) scale(0.9);
+            transform: translateY(0.5rem) scale(0.9);
+  }
+  .bars.activ .bar {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background: rgba(255, 99, 125, 0.98);
+  }
+  .bars.activ .bar::before {
+    background: rgba(255, 99, 125, 0.98);
+    visibility: hidden;
+  }
+  .bars.activ .bar::after {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    background: rgba(255, 99, 125, 0.98);
+    width: 100%;
+    top: 0;
+  }
+  .servicegrid {
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    justify-items: center;
+  }
+  .servicegrid .service {
+    max-width: 20rem;
+  }
+  .contactflex {
+    gap: .7rem;
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer ul {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+  .test {
+    width: 100%  !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #about .page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .aboutflex {
+    position: relative;
+    left: 0 !important;
+    width: calc(100% - 2rem) !important;
+    height: auto !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .aboutflex .aboutimage {
+    position: relative !important;
+    width: 100%;
+    height: 450px !important;
+  }
+  .aboutflex .aboutimage > img {
+    position: absolute;
+  }
+  .aboutflex .aboutimage div {
+    width: 14rem;
+    height: 14rem;
+    position: absolute;
+    border: 6px solid #fff;
+  }
+  .aboutflex .aboutimage div.image1 {
+    left: -1rem !important;
+    top: -1rem !important;
+    width: 17rem;
+    height: 12rem;
+  }
+  .aboutflex .aboutimage div.image2 {
+    right: -1rem !important;
+    top: -1rem !important;
+    width: 12rem;
+    height: 17rem;
+  }
+  .aboutflex .aboutimage div.image3 {
+    left: -1rem !important;
+    bottom: -1rem !important;
+    width: 13rem;
+    height: 17rem;
+  }
+  .aboutflex .aboutimage div.image4 {
+    right: -1rem !important;
+    bottom: -1rem !important;
+    width: 17rem;
+    height: 12rem;
+  }
+  .aboutflex .abouttext {
+    position: relative !important;
+    width: 100%;
+    right: 0 !important;
+    top: 0 !important;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    z-index: 2;
+    margin-top: 5rem !important;
+  }
+}
+
+@media (max-width: 800px) {
+  #home {
+    padding: 5rem 1rem 5rem;
+  }
+  #home .intro {
+    padding: 1rem 1rem;
+  }
+  #home .intro h1 {
+    font-size: 3.9rem;
+  }
+  #home .intro h1 span {
+    font-size: 4.3rem;
+  }
+  #home .intro p {
+    font-size: 1.2rem;
+  }
+  .blogflex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contactflex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .contactflex .map {
+    margin-top: 2rem;
+  }
+  .productgrid {
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    gap: .6rem;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    padding-left: 1rem;
+  }
+  .productgrid {
+    -ms-grid-columns: (1fr)[1] !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+    gap: .6rem;
+    justify-items: center;
+  }
+  .servicegrid {
+    -ms-grid-columns: (1fr)[1] !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .aboutflex {
+    position: relative;
+    left: 0 !important;
+    width: calc(100% - 2rem) !important;
+    height: auto !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .aboutflex .aboutimage div {
+    border: 5px solid #fff !important;
+  }
+  .aboutflex .aboutimage div.image1 {
+    left: -1rem !important;
+    top: -1rem !important;
+    width: 11rem !important;
+    height: 9rem !important;
+  }
+  .aboutflex .aboutimage div.image2 {
+    right: -1rem !important;
+    top: -1rem !important;
+    width: 9rem !important;
+    height: 11rem !important;
+  }
+  .aboutflex .aboutimage div.image3 {
+    left: -1rem !important;
+    bottom: -1rem !important;
+    width: 9rem !important;
+    height: 11rem !important;
+  }
+  .aboutflex .aboutimage div.image4 {
+    right: -1rem !important;
+    bottom: -1rem !important;
+    width: 11rem !important;
+    height: 9rem !important;
+  }
 }
 /*# sourceMappingURL=index.css.map */

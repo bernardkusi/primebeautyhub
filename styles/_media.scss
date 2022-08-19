@@ -1,0 +1,363 @@
+@media (max-width:1080px) {
+    .productgrid{
+        grid-template-columns: repeat(3,1fr) !important;
+        gap: .6rem;
+
+        .product{
+            max-width: 23rem;
+            justify-items: center;
+        }
+
+    }
+
+        .aboutflex{
+            width: 55%;
+            height: 450px;
+            position: relative;
+            margin-top: 2rem;
+            left: 2rem;
+
+
+            .aboutimage{
+
+                div{
+
+                    &.image1{
+                        left: -2rem;
+                        top: -2rem;
+                        width: 13rem !important;
+                        height: 10rem !important;
+                    }
+
+                    &.image2{
+                        right: -2rem;
+                        top: -2rem;
+                        width: 10rem !important;
+                        height: 13rem !important;
+                    }
+
+                    &.image3{
+                        left: -2rem;
+                        bottom: -2rem;
+                        width: 10rem !important;
+                        height: 13rem !important;
+                    }
+
+                    &.image4{
+                        right: -2rem;
+                        bottom: -2rem;
+                        width: 13rem !important;
+                        height: 10rem !important;
+                    }
+                }
+            }
+
+            .abouttext{
+                position: absolute;
+                width: 100%;
+                right: -75%;
+                top: 30%;
+                background: rgba(149, 70, 149, 0.95);
+                color: #fff;
+                padding: 1.5rem;
+                border-radius: .5rem;
+                z-index: 2;
+            }
+    }
+
+    .servicegrid{
+        gap: .5rem !important;
+    }
+    
+}
+
+@media (max-width:900px) {
+    nav{
+        ul{
+            display: none;
+        }
+
+        
+        height: 4.5rem;
+    }
+    
+    .bars{
+        z-index: 12;
+        display: block;
+        position: fixed;
+        right: 1.7rem;
+        top: 2rem;
+        width: 25px;
+        height: 23px;
+        transform: scale(.95);
+    
+        .bar {
+            width: 100%;
+            position: relative;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all .4s;
+        
+            &::before {
+                content: "";
+                width: 85%;
+                position: absolute;
+                height: 3px;
+                background: #fff;
+                top: 8px;
+                border-radius: 2px;
+              }
+        
+              &::after {
+                content: "";
+                width: 60%;
+                position: absolute;
+                height: 3px;
+                background: #fff;
+                top: 16px;
+                border-radius: 2px;
+              }
+    
+          }
+
+        &.activ{
+            transform: translateY(.5rem) scale(.9);
+            .bar{
+                transform: rotate(45deg);
+                background: $primary ;
+
+                &::before{
+                    background: $primary;
+                    // display: none;
+                    visibility: hidden;
+
+                }
+
+                &::after{
+                    transform: rotate(90deg);
+                    background: $primary;
+                    width: 100%;
+
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    .servicegrid{
+        grid-template-columns: repeat(2,1fr) !important;
+        justify-items: center;
+
+        .service{
+            max-width: 20rem;
+        }
+    }   
+
+    .contactflex{
+        gap: .7rem;
+    }
+
+    footer{
+        flex-direction: column;
+
+        ul{
+            padding-left: 0;
+            padding-top: 2rem;
+        }
+    }
+
+    .test{
+        width: 100%  !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    #about {
+        .page{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .aboutflex{
+        position: relative;
+        left: 0 !important;
+        width: calc(100% - 2rem) !important;
+        height: auto !important;
+        display: flex;
+        flex-direction: column-reverse;
+
+
+        .aboutimage{
+            position: relative !important;
+            width: 100%;
+            height: 450px !important;
+
+            &>img{
+                position: absolute;
+                // display: none !important;
+            }
+
+            div{
+                width: 14rem;
+                height: 14rem;
+                position: absolute;
+                border: 6px solid #fff;
+
+
+                &.image1{
+                    left: -1rem !important;
+                    top: -1rem !important;
+                    width: 17rem;
+                    height: 12rem;
+                }
+
+                &.image2{
+                    right: -1rem !important;
+                    top: -1rem !important;
+                    width: 12rem;
+                    height: 17rem;
+                }
+
+                &.image3{
+                    left: -1rem !important;
+                    bottom: -1rem !important;
+                    width: 13rem;
+                    height: 17rem;
+                }
+
+                &.image4{
+                    right: -1rem !important;
+                    bottom: -1rem !important;
+                    width: 17rem;
+                    height: 12rem;
+                }
+            }
+        }
+
+        .abouttext{
+            position: relative !important;
+            width: 100%;
+            right: 0 !important;
+            top: 0 !important;
+            padding: 1.5rem;
+            border-radius: .5rem;
+            z-index: 2;
+            margin-top: 5rem !important;
+        }
+}
+    
+}
+
+@media (max-width:800px) {
+
+    #home{
+        padding: 5rem 1rem 5rem;
+    
+        .intro{
+            padding: 1rem 1rem;
+    
+            h1{
+                font-size: 3.9rem;
+    
+                span{
+                    font-size: 4.3rem;
+                }
+            }
+    
+            p{
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+    .blogflex{
+        flex-direction: column;
+    }
+    
+    .contactflex{
+        flex-direction: column-reverse;
+
+        .map{
+            margin-top: 2rem;
+        }
+    }
+
+    .productgrid{
+        grid-template-columns: repeat(2,1fr) !important;
+        gap: .6rem;
+
+    }
+
+
+}
+
+
+@media (max-width:560px) {
+    nav{
+        padding-left: 1rem;
+    }
+
+    .productgrid{
+        grid-template-columns: repeat(1,1fr) !important;
+        gap: .6rem;
+        justify-items: center;
+
+    }
+
+    .servicegrid{
+        grid-template-columns: repeat(1,1fr) !important;
+
+        }
+
+        .aboutflex{
+            position: relative;
+            left: 0 !important;
+            width: calc(100% - 2rem) !important;
+            height: auto !important;
+            display: flex;
+            flex-direction: column-reverse;
+    
+    
+            .aboutimage{
+    
+                div{
+                    border: 5px solid #fff !important;
+    
+    
+                    &.image1{
+                        left: -1rem !important;
+                        top: -1rem !important;
+                        width: 11rem !important;
+                        height: 9rem !important;
+                    }
+    
+                    &.image2{
+                        right: -1rem !important;
+                        top: -1rem !important;
+                        width: 9rem !important;
+                        height: 11rem !important;
+                    }
+    
+                    &.image3{
+                        left: -1rem !important;
+                        bottom: -1rem !important;
+                        width: 9rem !important;
+                        height: 11rem !important;
+                    }
+    
+                    &.image4{
+                        right: -1rem !important;
+                        bottom: -1rem !important;
+                        width: 11rem !important;
+                        height: 9rem !important;
+                    }
+                }
+            }
+    
+    }
+
+
+}
+
